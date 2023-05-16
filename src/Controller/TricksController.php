@@ -74,12 +74,16 @@ class TricksController extends AbstractController
             //On récupère les images
             $mediaTricks = $tricksForm->get('media_tricks')->getData();
 
+//            $images = $tricksForm->get('images')->getData();
+
+//            dd($tricksForm, $mediaTricks);
+
             foreach($mediaTricks as $mediaTrick) {
                 //On définit le dossier de destination
                 $folder = "media_tricks";
 
                 //On appelle le service d'ajout
-                $file = $pictureService->add($mediaTrick,$folder, 300, 300);
+                $file = $pictureService->add($mediaTrick, $folder, 300, 300);
 
                 $mediaEntity = new MediaTricks();
                 $mediaEntity->setMediaName($file);

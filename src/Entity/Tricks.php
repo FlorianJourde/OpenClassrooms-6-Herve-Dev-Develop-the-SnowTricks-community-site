@@ -33,7 +33,7 @@ class Tricks
     private Collection $MediaTricks;
 
     #[ORM\ManyToOne(inversedBy: 'Tricks')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Category $category = null;
 
     #[ORM\OneToMany(mappedBy: 'tricks', targetEntity: Comment::class, orphanRemoval: true)]
